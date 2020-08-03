@@ -1,0 +1,133 @@
+.header {
+  @include wrapper;
+  min-height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  flex-basis: 540px;
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    height: 40px;
+    @include align-center;
+  }
+}
+
+.right-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 420px;
+
+  &__input {
+    background-color: $border-color;
+    border: none;
+    border-radius: 6px;
+    flex-basis: 350px;
+    padding-left: 38px;
+    background-image: url('./assets/img/icon_search.svg');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    transition: all 1s;
+
+    &:focus {
+      background-color: #fff;
+      padding-left: 16px;
+      background-image: none;
+    }
+  }
+
+  &__btn {
+    width: 40px;
+    height: 40px;
+    background-image: url('./assets/img/icon_filter.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all .2s;
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 0px 0px 277px 3px $bg-color;
+    }
+
+    &:active {
+      box-shadow: none;
+      background-size: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .header {
+    @include wrapper(860px);
+  }
+
+  .nav {
+    flex-basis: 420px;
+    
+    &__logo {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .header {
+    @include wrapper(700px);
+  }
+
+  .nav {
+    flex-basis: 45%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .header {
+    @include wrapper(700px);
+    flex-direction: column-reverse;
+    padding: 10px;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: start;
+
+    &__link {
+      margin-right: 10px;
+    }
+  }
+
+  .right-nav {
+    width: 100%;
+    flex-basis: 30px;
+
+    &__input {
+      height: 30px;
+    }
+
+    &__btn {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header {
+    @include wrapper(520px);
+  }
+
+  .nav__link {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .nav {
+    justify-content: space-between;
+  }
+}
+

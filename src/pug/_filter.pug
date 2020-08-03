@@ -1,0 +1,33 @@
+include ./_range.pug
+
+section.filter.filter--hidden
+  .filter__container  
+    .filter__wrapper
+      h2.filter__title Filter
+      button.filter__close
+    h3.filter__subtitle Price ($)
+    .filter__wrapper
+      button.btn.filter__btn.filter__btn--price(data-filter="200") 0-200
+      button.btn.filter__btn.filter__btn--price(data-filter="400") 200-400
+      button.btn.filter__btn.filter__btn--price(data-filter="600") 400-600
+      button.btn.filter__btn.filter__btn--price(data-filter="more") More
+    .filter__wrapper.filter__wrapper--range
+      +range
+    h3.filter__subtitle Shape
+    .filter__wrapper
+      button.btn.filter__btn.filter__btn--shape Circle
+      button.btn.filter__btn.filter__btn--shape Square
+      button.btn.filter__btn.filter__btn--shape Rectangle
+      button.btn.filter__btn.filter__btn--shape Triangle
+    h3.filter__subtitle Size (Width/Height)
+    .filter__wrapper.filter__wrapper--size
+      button.btn.filter__btn.filter__btn--width 0-200
+      button.btn.filter__btn.filter__btn--width 200-400
+      button.btn.filter__btn.filter__btn--width 400-600
+      button.btn.filter__btn.filter__btn--width More
+    .filter__wrapper
+      button.btn.filter__btn.filter__btn--height 0-200
+      button.btn.filter__btn.filter__btn--height 200-400
+      button.btn.filter__btn.filter__btn--height 400-600
+      button.btn.filter__btn.filter__btn--height More
+  button.filter__apply Apply

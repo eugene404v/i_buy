@@ -1,0 +1,16 @@
+@import 'normalize.css';
+@import './scss/variables';
+@import './scss/mixins';
+@import './scss/base';
+@import './scss/fonts';
+
+@import './scss/btn';
+@import './scss/header';
+@import './scss/filter';
+@import './scss/menu';
+@import './scss/_gallery';
+
+@import './../node_modules/nouislider/distribute/nouislider.css';
+@import './scss/_nouisliderCustom';
+@import './scss/_range';
+

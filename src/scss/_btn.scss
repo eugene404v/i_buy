@@ -1,0 +1,25 @@
+.btn {
+  height: 40px;
+  width: 86px;
+  @include align-center;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  background-color: $btn-bg;
+  color: #fff;
+  transition: all .2s;
+
+  &:hover,
+  &:focus {
+    background-color: $border-color;
+  }
+
+  &:active {
+    color: $apply-text;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .btn {
+      width: 70px;
+  }
+}

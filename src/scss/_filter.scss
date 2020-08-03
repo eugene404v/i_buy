@@ -1,0 +1,90 @@
+.filter {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  
+  background-color: $btn-bg;
+  transition: all .8s ease;
+
+  &--hidden {
+    right: -470px;
+    transition: all .8s ease;
+  }
+
+  &__container {
+    padding: 30px;
+  }
+  
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    &--size {
+      margin-bottom: 20px;
+    }
+
+    &--range {
+      margin: 60px 0;
+    }
+  }
+
+  &__close {
+    width: 40px;
+    height: 40px;
+    background-image: url('./assets/img/icon_close.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+    transition: all .2s;
+
+    &:hover,
+    &:focus {
+      box-shadow: inset 0px 0px 277px 3px $btn-bg;
+    }
+
+    &:active {
+      box-shadow: none;
+      background-size: contain;
+    }
+  }
+
+  &__apply {
+    height: 60px;
+    background-color: $apply-btn;
+    color: $apply-text;
+    font-size: 20px;
+  }
+
+  &__title {
+    margin-bottom: 34px;
+    font-size: 30px;
+
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .filter {
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    &--hidden {
+      display: none;
+    }
+
+    &__container {
+      padding: 20px;
+    }
+  }
+}

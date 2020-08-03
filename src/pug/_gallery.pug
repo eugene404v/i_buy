@@ -1,0 +1,53 @@
+- 
+  var imagesData = [
+    { "src": "./assets/img/1.jpg", "price": "200" },
+    { "src": "./assets/img/2.jpg", "price": "100" },
+    { "src": "./assets/img/3.jpg", "price": "300" },
+    { "src": "./assets/img/4.jpg", "price": "200" },
+    { "src": "./assets/img/5.jpg", "price": "500" },
+    { "src": "./assets/img/6.jpg", "price": "100" },
+    { "src": "./assets/img/7.jpg", "price": "1300" },
+    { "src": "./assets/img/8.jpg", "price": "100" },
+    { "src": "./assets/img/9.jpg", "price": "100" },
+    { "src": "./assets/img/2.jpg", "price": "400" },
+    { "src": "./assets/img/3.jpg", "price": "10" },
+    { "src": "./assets/img/4.jpg", "price": "100" },
+    { "src": "./assets/img/5.jpg", "price": "50" },
+    { "src": "./assets/img/6.jpg", "price": "100" },
+    { "src": "./assets/img/1.jpg", "price": "100" },
+    { "src": "./assets/img/2.jpg", "price": "100" },
+    { "src": "./assets/img/3.jpg", "price": "100" },
+    { "src": "./assets/img/4.jpg", "price": "100" },
+    { "src": "./assets/img/5.jpg", "price": "1400" },
+    { "src": "./assets/img/6.jpg", "price": "100" },
+    { "src": "./assets/img/7.jpg", "price": "1200" },
+    { "src": "./assets/img/8.jpg", "price": "1020" },
+    { "src": "./assets/img/9.jpg", "price": "1030" },
+    { "src": "./assets/img/2.jpg", "price": "1300" },
+    { "src": "./assets/img/3.jpg", "price": "200" },
+    { "src": "./assets/img/4.jpg", "price": "800" },
+    { "src": "./assets/img/5.jpg", "price": "700" },
+    { "src": "./assets/img/6.jpg", "price": "100" },
+    { "src": "./assets/img/1.jpg", "price": "200" },
+    { "src": "./assets/img/2.jpg", "price": "300" },
+    { "src": "./assets/img/3.jpg", "price": "100" },
+    { "src": "./assets/img/4.jpg", "price": "800" },
+    { "src": "./assets/img/5.jpg", "price": "100" },
+    { "src": "./assets/img/6.jpg", "price": "600" },
+    { "src": "./assets/img/7.jpg", "price": "100" },
+    { "src": "./assets/img/8.jpg", "price": "200" },
+    { "src": "./assets/img/9.jpg", "price": "1700" },
+    { "src": "./assets/img/2.jpg", "price": "3100" },
+    { "src": "./assets/img/3.jpg", "price": "1500" },
+    { "src": "./assets/img/4.jpg", "price": "700" },
+    { "src": "./assets/img/5.jpg", "price": "100" },
+    { "src": "./assets/img/6.jpg", "price": "200" }
+  ]
+
+mixin galleryItem(src, price)
+  img.gallery__item.lazy(src="", data-src=""+src, data-price=""+price)
+
+section.gallery
+  - for (var i=0; i<imagesData.length; i++)
+    +galleryItem(imagesData[i].src, imagesData[i].price)
+  
