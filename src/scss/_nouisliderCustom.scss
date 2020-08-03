@@ -32,3 +32,9 @@
     left: 40px;
   }
 }
+
+@media screen and (max-width: 414px) {
+  .noUi-horizontal .noUi-handle {
+    left: 20px;
+  }
+}
