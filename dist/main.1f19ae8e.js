@@ -2978,6 +2978,51 @@ function filterHandler(valueMin, valueMax) {
 
 var _default = priceFilter;
 exports.default = _default;
+},{}],"js/requestToBackEnd.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var requestBuilder = function requestBuilder() {
+  var data = {};
+  var priceTriggers = document.querySelectorAll('.filter__btn--price');
+  var shapeTriggers = document.querySelectorAll('.filter__btn--shape');
+  var widthTriggers = document.querySelectorAll('.filter__btn--width');
+  var heightTriggers = document.querySelectorAll('.filter__btn--height');
+  var applyTrigger = document.querySelector('.filter__apply');
+  priceTriggers.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      data.price = e.target.dataset.filter;
+    });
+  });
+  shapeTriggers.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      data.shape = e.target.dataset.filter;
+    });
+  });
+  widthTriggers.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      data.width = e.target.dataset.filter;
+    });
+  });
+  heightTriggers.forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      data.height = e.target.dataset.filter;
+    });
+  });
+  applyTrigger.addEventListener('click', function () {
+    console.log(data);
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://google.com', true);
+    xhr.send(JSON.stringify(data));
+  });
+};
+
+var _default = requestBuilder;
+exports.default = _default;
 },{}],"main.js":[function(require,module,exports) {
 "use strict";
 
@@ -2991,12 +3036,15 @@ var _range = _interopRequireDefault(require("./js/_range"));
 
 var _priceFilter = _interopRequireDefault(require("./js/priceFilter"));
 
+var _requestToBackEnd = _interopRequireDefault(require("./js/requestToBackEnd"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _filterOpener.default)();
 (0, _range.default)('range-slider');
 (0, _priceFilter.default)();
-},{"./main.scss":"main.scss","./js/filterOpener":"js/filterOpener.js","./js/lazyLoading":"js/lazyLoading.js","./js/_range":"js/_range.js","./js/priceFilter":"js/priceFilter.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _requestToBackEnd.default)();
+},{"./main.scss":"main.scss","./js/filterOpener":"js/filterOpener.js","./js/lazyLoading":"js/lazyLoading.js","./js/_range":"js/_range.js","./js/priceFilter":"js/priceFilter.js","./js/requestToBackEnd":"js/requestToBackEnd.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -3024,7 +3072,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6913" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "7223" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

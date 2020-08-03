@@ -15,19 +15,19 @@ section.filter.filter--hidden
       +range
     h3.filter__subtitle Shape
     .filter__wrapper
-      button.btn.filter__btn.filter__btn--shape Circle
-      button.btn.filter__btn.filter__btn--shape Square
-      button.btn.filter__btn.filter__btn--shape Rectangle
-      button.btn.filter__btn.filter__btn--shape Triangle
+      button.btn.filter__btn.filter__btn--shape(data-filter="circle") Circle
+      button.btn.filter__btn.filter__btn--shape(data-filter="square") Square
+      button.btn.filter__btn.filter__btn--shape(data-filter="rectangle") Rectangle
+      button.btn.filter__btn.filter__btn--shape(data-filter="triangle") Triangle
     h3.filter__subtitle Size (Width/Height)
     .filter__wrapper.filter__wrapper--size
-      button.btn.filter__btn.filter__btn--width 0-200
-      button.btn.filter__btn.filter__btn--width 200-400
-      button.btn.filter__btn.filter__btn--width 400-600
-      button.btn.filter__btn.filter__btn--width More
+      button.btn.filter__btn.filter__btn--width(data-filter="200") 0-200
+      button.btn.filter__btn.filter__btn--width(data-filter="400") 200-400
+      button.btn.filter__btn.filter__btn--width(data-filter="600") 400-600
+      button.btn.filter__btn.filter__btn--width(data-filter="more") More
     .filter__wrapper
-      button.btn.filter__btn.filter__btn--height 0-200
-      button.btn.filter__btn.filter__btn--height 200-400
-      button.btn.filter__btn.filter__btn--height 400-600
-      button.btn.filter__btn.filter__btn--height More
+      button.btn.filter__btn.filter__btn--height(data-filter="200") 0-200
+      button.btn.filter__btn.filter__btn--height(data-filter="400") 200-400
+      button.btn.filter__btn.filter__btn--height(data-filter="600") 400-600
+      button.btn.filter__btn.filter__btn--height(data-filter="more") More
   button.filter__apply Apply
